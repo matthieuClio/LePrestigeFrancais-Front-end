@@ -75,39 +75,39 @@ export default defineConfig([
 ```
 
 ## Project architecture
-src/
+src/  
+│  
+├── app/                # configuration globale (routes, providers, store)  
+│   ├── router/  
+│   ├── store/          # Redux / Zustand / etc  
+│   ├── providers/      # Theme, Auth, QueryClient...  
 │
-├── app/                # configuration globale (routes, providers, store)
-│   ├── router/
-│   ├── store/          # Redux / Zustand / etc
-│   ├── providers/      # Theme, Auth, QueryClient...
-│
-├── features/           # 🔥 cœur de l’app (par domaine métier)
-│   ├── auth/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── types/
-│   │   ├── store/
-│   │   └── pages/
-│   │
-│   ├── booking/
-│   ├── tickets/
-│   └── users/
-│
-├── shared/             # éléments réutilisables
-│   ├── components/     # Button, Modal, Input...
-│   ├── hooks/
-│   ├── utils/
-│   ├── services/       # appels API génériques
-│   ├── types/
-│   └── constants/
-│
-├── assets/             # images, fonts, etc
-│
-├── styles/             # global styles (tailwind, css, etc)
-│
-├── tests/              # tests globaux (optionnel)
-│
-├── main.tsx
-└── vite-env.d.ts / react-app-env.d.ts
+├── features/           # 🔥 cœur de l’app (par domaine métier)  
+│   ├── auth/  
+│   │   ├── api/  
+│   │   ├── components/  
+│   │   ├── hooks/  
+│   │   ├── types/  
+│   │   ├── store/  
+│   │   └── pages/  
+│   │  
+│   ├── booking/  
+│   ├── tickets/  
+│   └── users/  
+│  
+├── shared/             # éléments réutilisables  
+│   ├── components/     # Button, Modal, Input...  
+│   ├── hooks/  
+│   ├── utils/  
+│   ├── services/       # appels API génériques  
+│   ├── types/  
+│   └── constants/  
+│  
+├── assets/             # images, fonts, etc  
+│  
+├── styles/             # global styles (tailwind, css, etc)  
+│  
+├── tests/              # tests globaux (optionnel)  
+│  
+├── main.tsx  
+└── vite-env.d.ts / react-app-env.d.ts  
