@@ -74,7 +74,7 @@ export default defineConfig([
 ])
 ```
 
-## Project architecture
+## The project's architectural plan
 src/  
 │  
 ├── app/                # configuration globale (routes, providers, store)  
