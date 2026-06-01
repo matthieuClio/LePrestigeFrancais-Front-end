@@ -1,8 +1,17 @@
-// Features pages
+// Types
+import type { RouteObject } from "react-router";
 
-export const routes = [
+// Features pages
+import Home from "../../features/home/pages/Home";
+import Exercises from "../../features/exercises/pages/Exercises";
+
+export const routes: RouteObject[] = [
     {
         path: '/',
-        element: 'Page exemple'
+        element: <Home />
+    },
+    {
+        path: '/exercices',
+        element: <Exercises />
     }
 ];
