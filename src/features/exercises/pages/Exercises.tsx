@@ -1,5 +1,5 @@
 // Shared
-import Menu from "../../../shared/menu/Menu";
+import Menu from "../../../shared/components/navigation/menu/Menu";
 
 // Componants
 import LeftMenu from "../components/LeftMenu";
