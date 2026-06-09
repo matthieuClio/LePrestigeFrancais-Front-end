@@ -1,5 +1,51 @@
-/* Global */
+/* Default */
+/* ------ */
 * {
     margin: 0;
     padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* Factored */
+/* -------- */
+
+/* Primary, secondary... */
+.color-primary {
+    color: #101204;
+}
+.background-color-primary {
+    background-color: #101204;
+}
+.color-secondary {
+    color: #82B536;
+}
+.background-color-secondary {
+    background-color: #82B536;
+}
+.color-tertiary {
+    color: #242529;
+}
+.background-color-tertiary {
+    background-color: #242529;
+}
+.color-quaternary {
+    color: #838385;
+}
+.background-color-quaternary {
+    background-color: #838385;
+}
+
+/* Style */
+.font-weight-bold {
+    font-weight: bold;
+}
+
+/* Spacing */
+.margin-left {
+    margin-left: 20px;
 }
