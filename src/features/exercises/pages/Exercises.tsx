@@ -1,11 +1,11 @@
-// Layout (shared componants)
+// Shared
 import Menu from "../../../shared/menu/Menu";
 
 export default function Exercises () {
 
     return (
         <>
-            {/* Header / menu */}
+            {/* Menu */}
             <Menu />
 
             <main style={{display: 'flex', flexWrap: 'wrap', height: '100vh', backgroundColor: 'blue',  position: 'relative', flexDirection: 'column'}}>
