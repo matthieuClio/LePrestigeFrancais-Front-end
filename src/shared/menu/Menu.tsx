@@ -5,7 +5,7 @@ export default function Menu () {
     return (
         <menu style={{border: '3px solid purple'}}>
             <nav style={{border: '3px solid blue'}}>
-                <ul style={{height: 70, textAlign: 'center', display: 'flex', alignItems: 'center'}} className="background-color-primary">
+                <ul style={{height: 70, textAlign: 'center', display: 'flex', alignItems: 'center'}} className="background-color-primary list-style-none">
                     <li style={{border: '2px solid green'}} className="margin-left">
                         <Link to='/' className="color-secondary">
                             Logo
