@@ -1,11 +1,12 @@
+// Layout (shared componants)
+import Menu from "../../../shared/menu/Menu";
+
 export default function Exercises () {
 
     return (
         <>
             {/* Header / menu */}
-            <menu style={{backgroundColor: 'purple', color: 'white', height: 70, textAlign: 'center'}}>
-                Menu
-            </menu>
+            <Menu />
 
             <main style={{display: 'flex', flexWrap: 'wrap', height: '100vh', backgroundColor: 'blue',  position: 'relative', flexDirection: 'column'}}>
 
@@ -15,7 +16,7 @@ export default function Exercises () {
 
                 {/* Exercise */}
                 <h1 style={{height: 70, backgroundColor: 'orange', color: 'white', textAlign: 'center'}}>
-                    Exercice
+                    Exercices
                 </h1>
 
                 <div style={{width: 400, height: 400, backgroundColor: 'green', margin: 'auto', textAlign: 'center', borderRadius: '100%'}}>
