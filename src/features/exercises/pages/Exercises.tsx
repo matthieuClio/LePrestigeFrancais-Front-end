@@ -1,18 +1,18 @@
 // Shared
 import Menu from "../../../shared/menu/Menu";
 
-export default function Exercises () {
+// Componants
+import LeftMenu from "../components/LeftMenu";
 
+export default function Exercises () {
     return (
         <>
             {/* Menu */}
             <Menu />
 
             <main style={{display: 'flex', flexWrap: 'wrap', height: '100vh', backgroundColor: 'blue',  position: 'relative', flexDirection: 'column'}}>
-
-                <nav style={{width: 200, height: '100%', backgroundColor: 'purple', color: 'white', border: '4px solid pink', position: 'absolute', left: 0}}>
-                    Menu exercices (gauche)
-                </nav>
+                
+                <LeftMenu />
 
                 {/* Exercise */}
                 <h1 style={{height: 70, backgroundColor: 'orange', color: 'white', textAlign: 'center'}}>

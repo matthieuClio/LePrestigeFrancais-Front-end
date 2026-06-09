@@ -4,9 +4,6 @@
     margin: 0;
     padding: 0;
 }
-ul {
-    list-style: none;
-}
 a {
     text-decoration: none;
 }
@@ -44,8 +41,26 @@ a {
 .font-weight-bold {
     font-weight: bold;
 }
+.text-align-center {
+    text-align: center;
+}
+.list-style-none {
+    list-style: none;
+}
 
 /* Spacing */
+.margin-top {
+    margin-top: 20px;
+}
+.margin-bottom {
+    margin-bottom: 20px;
+}
 .margin-left {
     margin-left: 20px;
+}
+.margin-right {
+    margin-right: 20px;
+}
+.padding {
+    padding: 20px;
 }
