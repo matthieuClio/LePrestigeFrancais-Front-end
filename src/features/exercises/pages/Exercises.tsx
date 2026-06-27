@@ -1,5 +1,5 @@
 // Shared
-import Menu from "../../../shared/components/navigation/menu/Menu";
+import Menu from "../../../shared/components/navigation/Menu";
 
 // Componants
 import LeftMenu from "../components/LeftMenu";
@@ -77,12 +77,14 @@ export default function Exercises () {
                         Exercice
                     </h2>
 
-                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%'}} 
+                    <button style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
                     className="background-color-primary">
-                        <span style={{fontSize: 30}} className="color-secondary">Com_encer</span>
-                    </div>
+                        <span style={{fontSize: 30}} className="color-secondary">
+                            Com_encer
+                        </span>
+                    </button>
 
-                    <div style={{textAlign: "center"}} className="margin-top">
+                    <form action="#" style={{textAlign: "center"}} className="margin-top">
                         <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginRight: 10, border: 'none', cursor: 'pointer'}} 
                         className="background-color-primary color-secondary">
                             Double
@@ -92,7 +94,7 @@ export default function Exercises () {
                         className="background-color-primary color-secondary">
                             Simple
                         </button>
-                    </div>
+                    </form>
                 </section>
             </main>
         </>
