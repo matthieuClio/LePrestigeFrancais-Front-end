@@ -12,11 +12,17 @@ a {
 /* -------- */
 
 /* Primary, secondary... */
-.color-primary {
+/* .color-primary {
     color: #101204;
+} */
+.color-primary {
+    color: #252525;
 }
-.background-color-primary {
+/* .background-color-primary {
     background-color: #101204;
+} */
+.background-color-primary {
+    background-color: #252525;
 }
 .color-secondary {
     color: #82B536;

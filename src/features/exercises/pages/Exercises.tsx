@@ -10,18 +10,25 @@ export default function Exercises () {
             {/* Menu */}
             <Menu />
 
-            <main style={{display: 'flex', flexWrap: 'wrap', height: '100vh', backgroundColor: 'skyblue',  position: 'relative', flexDirection: 'column'}}>
+            <main style={{display: 'flex', backgroundColor: 'gray',  position: 'relative', flexDirection: 'column'}}>
                 
-                {/* Left menu */}
+                {/* Left menu - Exercices navigation */}
                 <LeftMenu />
 
-                <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', color: 'white', border: '4px solid yellow'}} className="background-color-primary">
-                    {/* Exercise */}
-                    <h1 style={{paddingTop: 20, paddingBottom: 20, backgroundColor: 'orange', color: 'white', textAlign: 'center'}}>
-                        Leçon : les doubles consonnes
-                    </h1>
+                {/* Lesson */}
+                <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', paddingRight: '20px', color: 'white', border: '4px solid green'}}
+                className="text-align-center">
+                    <h1>Le Prestige Français</h1>
+                </section>
 
-                    <p style={{paddingTop: 20}} className="color-secondary">
+                {/* Lesson */}
+                <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', paddingRight: '20px', color: 'white', border: '4px solid yellow'}} 
+                className="background-color-primary">
+                    <h2 style={{paddingTop: 20, paddingBottom: 20, color: 'white', textAlign: 'center'}} className="background-color-secondary">
+                        Leçon : les doubles consonnes
+                    </h2>
+
+                    <p className="margin-top color-secondary">
                         (Source : chatgpt)
                         <br/>
                         <br/>
@@ -64,12 +71,29 @@ export default function Exercises () {
                     </p>
                 </section>
 
-                {/* <div style={{width: 400, height: 400, backgroundColor: 'green', margin: 'auto', textAlign: 'center', borderRadius: '100%'}}>
-                    Com_encer
-                </div>
+                {/* Exercise */}
+                <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', paddingRight: '20px', border: '4px solid orange'}}>
+                    <h2 style={{paddingTop: 20, paddingBottom: 20, color: 'white', textAlign: 'center'}} className="background-color-secondary">
+                        Exercice
+                    </h2>
 
-                <button style={{width: 200, margin: 'auto'}}>Double</button>
-                <button style={{width: 200, margin: 'auto'}}>Simple</button> */}
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%'}} 
+                    className="background-color-primary">
+                        <span style={{fontSize: 30}} className="color-secondary">Com_encer</span>
+                    </div>
+
+                    <div style={{textAlign: "center"}} className="margin-top">
+                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginRight: 10, border: 'none', cursor: 'pointer'}} 
+                        className="background-color-primary color-secondary">
+                            Double
+                        </button>
+
+                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginLeft: 10, border: 'none', cursor: 'pointer'}} 
+                        className="background-color-primary color-secondary">
+                            Simple
+                        </button>
+                    </div>
+                </section>
             </main>
         </>
     );
