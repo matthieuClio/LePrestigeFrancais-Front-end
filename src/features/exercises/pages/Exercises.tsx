@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+// import { useState } from "react";
 
 // Shared
 import Menu from "../../../shared/components/navigation/Menu";
@@ -12,7 +12,7 @@ import { data } from '../data/ExercisesData';
 
 export default function Exercises () {
     const maxData = data.length;
-    const [correctAnswer, setCorrectAnswer] = useState(data[0].correctAnswer);
+    // const [correctAnswer, setCorrectAnswer] = useState(data[0].correctAnswer);
 
     return (
         <>
@@ -96,6 +96,10 @@ export default function Exercises () {
                         <span style={{fontSize: 30}} className="color-secondary">
                             {data[0].question}
                         </span>
+                    </div>
+
+                    <div style={{width: 120, margin: 'auto', padding: 10, marginTop: 20, borderRadius: 5, color: 'white'}} className="background-color-secondary text-align-center">
+                        Notification Answer
                     </div>
 
                     <form action="#" style={{textAlign: "center"}} className="margin-top">
