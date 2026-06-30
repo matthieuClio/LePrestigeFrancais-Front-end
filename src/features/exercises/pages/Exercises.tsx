@@ -1,3 +1,6 @@
+// React
+import { useState } from "react";
+
 // Shared
 import Menu from "../../../shared/components/navigation/Menu";
 
@@ -8,6 +11,9 @@ import LeftMenu from "../components/LeftMenu";
 import { data } from '../data/ExercisesData';
 
 export default function Exercises () {
+    const maxData = data.length;
+    const [correctAnswer, setCorrectAnswer] = useState(data[0].correctAnswer);
+
     return (
         <>
             {/* Menu */}
@@ -18,7 +24,7 @@ export default function Exercises () {
                 {/* Left menu - Exercices navigation */}
                 <LeftMenu />
 
-                {/* Lesson */}
+                {/* Main title */}
                 <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', paddingRight: '20px', color: 'white', border: '4px solid green'}}
                 className="text-align-center">
                     <h1>Le Prestige Français</h1>
@@ -80,20 +86,25 @@ export default function Exercises () {
                         Exercice
                     </h2>
 
-                    <button style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
+                    <span style={{display: 'block', padding: 20, margin: 'auto', marginTop: 20, width: 70, borderRadius: 5}} className="color-secondary background-color-primary text-align-center">
+                        {data[0].id} / {maxData}
+                    </span>
+
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
                     className="background-color-primary">
+
                         <span style={{fontSize: 30}} className="color-secondary">
                             {data[0].question}
                         </span>
-                    </button>
+                    </div>
 
                     <form action="#" style={{textAlign: "center"}} className="margin-top">
-                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer'}} 
+                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Double
                         </button>
 
-                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginLeft: 10, border: 'none', cursor: 'pointer'}} 
+                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginLeft: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Simple
                         </button>
