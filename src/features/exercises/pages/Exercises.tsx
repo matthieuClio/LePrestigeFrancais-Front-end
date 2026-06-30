@@ -4,6 +4,9 @@ import Menu from "../../../shared/components/navigation/Menu";
 // Componants
 import LeftMenu from "../components/LeftMenu";
 
+// Data
+import { data } from '../data/ExercisesData';
+
 export default function Exercises () {
     return (
         <>
@@ -32,7 +35,7 @@ export default function Exercises () {
                         (Source : chatgpt)
                         <br/>
                         <br/>
-                        Dans la plupart des cas, la double consonne ne correspond pas à une prononciation plus forte.
+                        Dans la plupart des cas, la double consonne ne correspond pas à une prononciation plus forte à l'oral.
                         <br/>
                         Il faut simplement mémoriser l'orthographe.
                         <br/>
@@ -80,17 +83,17 @@ export default function Exercises () {
                     <button style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
                     className="background-color-primary">
                         <span style={{fontSize: 30}} className="color-secondary">
-                            Com_encer
+                            {data[0].question}
                         </span>
                     </button>
 
                     <form action="#" style={{textAlign: "center"}} className="margin-top">
-                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginRight: 10, border: 'none', cursor: 'pointer'}} 
+                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer'}} 
                         className="background-color-primary color-secondary">
                             Double
                         </button>
 
-                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginLeft: 10, border: 'none', cursor: 'pointer'}} 
+                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginLeft: 10, border: 'none', cursor: 'pointer'}} 
                         className="background-color-primary color-secondary">
                             Simple
                         </button>
