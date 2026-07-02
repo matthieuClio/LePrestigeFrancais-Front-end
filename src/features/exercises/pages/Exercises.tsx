@@ -1,5 +1,6 @@
 // React
-// import { useState } from "react";
+import { useState } from "react";
+import type { SyntheticEvent } from 'react';
 
 // Shared
 import Menu from "../../../shared/components/navigation/Menu";
@@ -12,7 +13,33 @@ import { data } from '../data/ExercisesData';
 
 export default function Exercises () {
     const maxData = data.length;
-    // const [correctAnswer, setCorrectAnswer] = useState(data[0].correctAnswer);
+    const [notification, setNotification] = useState({
+        answer: false,
+        text: ''
+    });
+
+    function checkAnswer (event: SyntheticEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        // Form data
+        const form = new FormData(event.currentTarget);
+        const formRadio = form.get("answer-radio");
+
+        if (data[0].correctAnswer === formRadio) {
+            // setNotification(['correcte', 'Bonne réponse']);
+            setNotification({
+                answer: true,
+                text: 'Bonne réponse'
+            });
+
+        } else if (data[0].correctAnswer !== formRadio) {
+            setNotification({
+                answer: false,
+                text: 'Erreur, la bonne réponse était : ' + data[0].correctAnswer
+            });
+            // setNotification(['error', 'Erreur, la bonne réponse était : ' + data[0].correctAnswer]);
+        }
+    }
 
     return (
         <>
@@ -98,20 +125,29 @@ export default function Exercises () {
                         </span>
                     </div>
 
-                    <div style={{width: 120, margin: 'auto', padding: 10, marginTop: 20, borderRadius: 5, color: 'white'}} className="background-color-secondary text-align-center">
-                        Notification Answer
+                    <div style={{width: 120, margin: 'auto', padding: 10, marginTop: 20, borderRadius: 5, color: 'white'}} className={notification.answer ? 'background-color-secondary text-align-center' : 'background-color-error'}>
+                        {notification.text}
                     </div>
 
-                    <form action="#" style={{textAlign: "center"}} className="margin-top">
-                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
+                    <form onSubmit={checkAnswer} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', border: '2px solid purple'}} className="margin-top">
+                        <label htmlFor="radio-double" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Double
-                        </button>
+                        </label>
+                        <input type="radio" id="radio-double" name="answer-radio" value="double" />
 
-                        <button style={{paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginLeft: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
+                        <label htmlFor="radio-simple" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35,   marginLeft: 10, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Simple
-                        </button>
+                        </label>
+                        <input type="radio" id="radio-simple" name="answer-radio" value="simple" />
+                        
+                        <div style={{width: '100%', border: '2px solid black', textAlign: 'center'}}>
+                            <button type="submit" style={{color: 'white', marginTop: 20, paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
+                            className="background-color-secondary">
+                                Valider
+                            </button>
+                        </div>
                     </form>
                 </section>
             </main>
