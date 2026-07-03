@@ -1,0 +1,39 @@
+/* Helpers */
+.color-primary {
+    color: #252525;
+}
+.background-color-primary {
+    background-color: #252525;
+}
+.color-secondary {
+    color: #82B536;
+}
+.background-color-secondary {
+    background-color: #82B536;
+}
+.color-tertiary {
+    color: #242529;
+}
+.background-color-tertiary {
+    background-color: #242529;
+}
+.color-quaternary {
+    color: #838385;
+}
+.background-color-quaternary {
+    background-color: #838385;
+}
+.background-color-error {
+    background-color: red;
+}
+
+/* Style */
+.font-weight-bold {
+    font-weight: bold;
+}
+.text-align-center {
+    text-align: center;
+}
+.list-style-none {
+    list-style: none;
+}
