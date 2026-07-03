@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 a {
     text-decoration: none;
@@ -11,16 +12,9 @@ a {
 /* Factored */
 /* -------- */
 
-/* Primary, secondary... */
-/* .color-primary {
-    color: #101204;
-} */
 .color-primary {
     color: #252525;
 }
-/* .background-color-primary {
-    background-color: #101204;
-} */
 .background-color-primary {
     background-color: #252525;
 }
@@ -41,6 +35,9 @@ a {
 }
 .background-color-quaternary {
     background-color: #838385;
+}
+.background-color-error {
+    background-color: red;
 }
 
 /* Style */

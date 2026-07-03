@@ -1,10 +1,46 @@
+// React
+import { useState } from "react";
+import type { SyntheticEvent } from 'react';
+
 // Shared
 import Menu from "../../../shared/components/navigation/Menu";
 
 // Componants
 import LeftMenu from "../components/LeftMenu";
 
+// Data
+import { data } from '../data/ExercisesData';
+
 export default function Exercises () {
+    const maxData = data.length;
+    const [notification, setNotification] = useState({
+        answer: false,
+        text: ''
+    });
+
+    function checkAnswer (event: SyntheticEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        // Form data
+        const form = new FormData(event.currentTarget);
+        const formRadio = form.get("answer-radio");
+
+        if (data[0].correctAnswer === formRadio) {
+            // setNotification(['correcte', 'Bonne réponse']);
+            setNotification({
+                answer: true,
+                text: 'Bonne réponse'
+            });
+
+        } else if (data[0].correctAnswer !== formRadio) {
+            setNotification({
+                answer: false,
+                text: 'Erreur, la bonne réponse était : ' + data[0].correctAnswer
+            });
+            // setNotification(['error', 'Erreur, la bonne réponse était : ' + data[0].correctAnswer]);
+        }
+    }
+
     return (
         <>
             {/* Menu */}
@@ -15,7 +51,7 @@ export default function Exercises () {
                 {/* Left menu - Exercices navigation */}
                 <LeftMenu />
 
-                {/* Lesson */}
+                {/* Main title */}
                 <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '220px', paddingRight: '20px', color: 'white', border: '4px solid green'}}
                 className="text-align-center">
                     <h1>Le Prestige Français</h1>
@@ -32,7 +68,7 @@ export default function Exercises () {
                         (Source : chatgpt)
                         <br/>
                         <br/>
-                        Dans la plupart des cas, la double consonne ne correspond pas à une prononciation plus forte.
+                        Dans la plupart des cas, la double consonne ne correspond pas à une prononciation plus forte à l'oral.
                         <br/>
                         Il faut simplement mémoriser l'orthographe.
                         <br/>
@@ -77,23 +113,41 @@ export default function Exercises () {
                         Exercice
                     </h2>
 
-                    <button style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
-                    className="background-color-primary">
-                        <span style={{fontSize: 30}} className="color-secondary">
-                            Com_encer
-                        </span>
-                    </button>
+                    <span style={{display: 'block', padding: 20, margin: 'auto', marginTop: 20, width: 70, borderRadius: 5}} className="color-secondary background-color-primary text-align-center">
+                        {data[0].id} / {maxData}
+                    </span>
 
-                    <form action="#" style={{textAlign: "center"}} className="margin-top">
-                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginRight: 10, border: 'none', cursor: 'pointer'}} 
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
+                    className="background-color-primary">
+
+                        <span style={{fontSize: 30}} className="color-secondary">
+                            {data[0].question}
+                        </span>
+                    </div>
+
+                    <div style={{width: 120, margin: 'auto', padding: 10, marginTop: 20, borderRadius: 5, color: 'white'}} className={notification.answer ? 'background-color-secondary text-align-center' : 'background-color-error'}>
+                        {notification.text}
+                    </div>
+
+                    <form onSubmit={checkAnswer} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', border: '2px solid purple'}} className="margin-top">
+                        <label htmlFor="radio-double" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Double
-                        </button>
+                        </label>
+                        <input type="radio" id="radio-double" name="answer-radio" value="double" />
 
-                        <button style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 25, paddingRight: 25, marginLeft: 10, border: 'none', cursor: 'pointer'}} 
+                        <label htmlFor="radio-simple" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35,   marginLeft: 10, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
                         className="background-color-primary color-secondary">
                             Simple
-                        </button>
+                        </label>
+                        <input type="radio" id="radio-simple" name="answer-radio" value="simple" />
+                        
+                        <div style={{width: '100%', border: '2px solid black', textAlign: 'center'}}>
+                            <button type="submit" style={{color: 'white', marginTop: 20, paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
+                            className="background-color-secondary">
+                                Valider
+                            </button>
+                        </div>
                     </form>
                 </section>
             </main>
