@@ -1,6 +1,6 @@
-export default function LeftMenu () {
+export default function ExercisesMenu () {
     return (
-        <nav style={{width: 200, height: '100%', border: '4px solid pink', position: 'absolute', left: 0}} className="background-color-primary color-secondary">
+        <nav style={{width: 200, border: '4px solid pink'}} className="background-color-primary color-secondary">
             <ul className="list-style-none">
                 <li style={{border: '2px solid blue'}} className="text-align-center padding">
                     Afficher / réduire
