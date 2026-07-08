@@ -14,6 +14,7 @@ import { data } from '../data/ExercisesData';
 
 export default function Exercises () {
     const maxData = data.length;
+    const [currenteQuestion, setCurrenteQuestion] = useState(0);
     const [notification, setNotification] = useState({
         answer: false,
         text: ''
@@ -26,7 +27,7 @@ export default function Exercises () {
         const form = new FormData(event.currentTarget);
         const formRadio = form.get("answer-radio");
 
-        if (data[0].correctAnswer === formRadio) {
+        if (data[currenteQuestion].correctAnswer === formRadio) {
             setNotification({
                 answer: true,
                 text: 'Bonne réponse'
@@ -35,8 +36,13 @@ export default function Exercises () {
         } else if (data[0].correctAnswer !== formRadio) {
             setNotification({
                 answer: false,
-                text: 'Erreur, la bonne réponse était : ' + data[0].correctAnswer
+                text: 'Erreur, la bonne réponse était : ' + data[currenteQuestion].correctAnswer
             });
+        }
+
+        // Define the next question
+        if (currenteQuestion < maxData-1) {
+            setCurrenteQuestion(currenteQuestion+1);
         }
     }
 
@@ -111,14 +117,14 @@ export default function Exercises () {
                         </h2>
 
                         <span style={{display: 'block', padding: 20, margin: 'auto', marginTop: 20, width: 70, borderRadius: 5}} className="color-secondary background-color-primary text-align-center">
-                            {data[0].id} / {maxData}
+                            {data[currenteQuestion].id} / {maxData}
                         </span>
 
                         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
                         className="background-color-primary">
 
                             <span style={{fontSize: 30}} className="color-secondary">
-                                {data[0].question}
+                                {data[currenteQuestion].question}
                             </span>
                         </div>
 
