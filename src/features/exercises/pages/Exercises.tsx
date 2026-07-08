@@ -12,6 +12,9 @@ import ExercisesMenu from "../components/ExercisesMenu";
 // Data
 import { data } from '../data/ExercisesData';
 
+// Style
+import './exercises.css';
+
 export default function Exercises () {
     const maxData = data.length;
     const [currenteQuestion, setCurrenteQuestion] = useState(0);
@@ -27,12 +30,14 @@ export default function Exercises () {
         const form = new FormData(event.currentTarget);
         const formRadio = form.get("answer-radio");
 
+        // Good answer
         if (data[currenteQuestion].correctAnswer === formRadio) {
             setNotification({
                 answer: true,
                 text: 'Bonne réponse'
             });
 
+        // Bad answer
         } else if (data[0].correctAnswer !== formRadio) {
             setNotification({
                 answer: false,
@@ -51,7 +56,7 @@ export default function Exercises () {
             {/* Menu */}
             <Menu />
 
-            <main style={{display: 'flex', backgroundColor: 'gray'}}>
+            <main className="exercises-main background-color-quaternary">
                 {/* Left menu - Exercices navigation */}
                 <ExercisesMenu />
 

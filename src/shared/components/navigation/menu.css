@@ -1,0 +1,8 @@
+.menu-tabs-container {
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+.menu-tabs {
+    border: 2px solid green;
+}

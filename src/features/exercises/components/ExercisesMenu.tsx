@@ -1,14 +1,17 @@
+// Style
+import './exercisesMenu.css';
+
 export default function ExercisesMenu () {
     return (
-        <nav style={{width: 200, border: '4px solid pink'}} className="background-color-primary color-secondary">
+        <nav className="exercises-menu-container background-color-primary color-secondary">
             <ul className="list-style-none">
-                <li style={{border: '2px solid blue'}} className="text-align-center padding">
+                <li className="exercises-menu-tabs text-align-center padding">
                     Afficher / réduire
                 </li>
-                <li style={{border: '2px solid blue'}} className="padding">
+                <li className="exercises-menu-tabs padding">
                     Double consonne
                 </li>
-                <li style={{border: '2px solid blue'}} className="padding">
+                <li className="exercises-menu-tabs padding">
                     Nom du deuxième exercice
                 </li>
             </ul>
