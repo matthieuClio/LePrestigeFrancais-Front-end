@@ -2,6 +2,9 @@
 .margin-top {
     margin-top: 20px;
 }
+.margin-top-10 {
+    margin-top: 10px;
+}
 .margin-bottom {
     margin-bottom: 20px;
 }
@@ -13,4 +16,10 @@
 }
 .padding {
     padding: 20px;
+}
+.padding-top {
+    padding-top: 20px;
+}
+.padding-bottom {
+    padding-bottom: 20px;
 }

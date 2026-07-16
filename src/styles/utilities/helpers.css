@@ -1,4 +1,7 @@
 /* Helpers */
+.width-100 {
+    width: 100%;
+}
 .color-primary {
     color: #252525;
 }
@@ -20,9 +23,14 @@
 .color-quaternary {
     color: #838385;
 }
-/* color: #838385; */
 .background-color-quaternary {
     background-color: #838385;
+}
+.color-quinternary {
+    color: white;
+}
+.background-color-quinternary {
+    background-color: white;
 }
 .background-color-error {
     background-color: red;

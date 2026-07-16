@@ -61,14 +61,13 @@ export default function Exercises () {
                 <ExercisesMenu />
 
                 {/* Container */}
-                <div style={{border: '4px solid white', width: '100%'}}>
+                <div style={{border: '4px solid white'}} className="width-100">
                     {/* Header layout */}
                     <Header />
 
                     {/* Lesson */}
-                    <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', color: 'white', border: '4px solid yellow'}} 
-                    className="background-color-primary">
-                        <h2 style={{paddingTop: 20, paddingBottom: 20, color: 'white', textAlign: 'center'}} className="background-color-secondary">
+                    <section className="exercises-lesson background-color-primary">
+                        <h2 className="exercises-lesson-title background-color-secondary color-quinternary text-align-center">
                             Leçon : les doubles consonnes
                         </h2>
 
@@ -88,16 +87,16 @@ export default function Exercises () {
                             <li className="margin-left">
                                 Respecter l'orthographe traditionnelle des mots ;
                             </li>
-                            <li style={{marginTop: 10}} className="margin-left">
+                            <li className="margin-left margin-top-10">
                                 Distinguer certains sons (notamment s / ss) ;
                             </li>
-                            <li style={{marginTop: 10}} className="margin-left">
+                            <li className="margin-left margin-top-10">
                                 Marquer l'appartenance à une famille de mots ;
                             </li>
-                            <li style={{marginTop: 10}} className="margin-left">
+                            <li className="margin-left margin-top-10">
                                 Apparaître après certains préfixes (illégal, irrégulier, immobile) ;
                             </li>
-                            <li style={{marginTop: 10}} className="margin-left">
+                            <li className="margin-left margin-top-10">
                                 Intervenir dans la conjugaison de certains verbes (j'appelle, je jette).
                             </li>
                             
@@ -116,43 +115,38 @@ export default function Exercises () {
                     </section>
 
                     {/* Exercise */}
-                    <section style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', border: '4px solid orange'}}>
-                        <h2 style={{paddingTop: 20, paddingBottom: 20, color: 'white', textAlign: 'center'}} className="background-color-secondary">
+                    <section className="exercises-pratice">
+                        <h2 className="background-color-secondary padding-top padding-bottom color-quinternary text-align-center">
                             Exercice
                         </h2>
 
-                        <span style={{display: 'block', padding: 20, margin: 'auto', marginTop: 20, width: 70, borderRadius: 5}} className="color-secondary background-color-primary text-align-center">
+                        <span className="exercises-pratice-nbquestion margin-top padding color-secondary background-color-primary text-align-center">
                             {data[currenteQuestion].id} / {maxData}
                         </span>
 
-                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: 400, height: 400, margin: 'auto', marginTop: 20,  borderRadius: '100%', border: 'none'}} 
-                        className="background-color-primary">
-
-                            <span style={{fontSize: 30}} className="color-secondary">
+                        <div className="exercises-pratice-round background-color-primary">
+                            <span className="exercises-pratice-question color-secondary">
                                 {data[currenteQuestion].question}
                             </span>
                         </div>
 
-                        <div style={{width: 120, margin: 'auto', padding: 10, marginTop: 20, borderRadius: 5, color: 'white'}} className={notification.answer ? 'background-color-secondary text-align-center' : 'background-color-error'}>
+                        <div className={notification.answer ? 'exercises-pratice-notification background-color-secondary text-align-center' : 'exercises-pratice-notification background-color-error'}>
                             {notification.text}
                         </div>
 
-                        <form onSubmit={checkAnswer} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', border: '2px solid purple'}} className="margin-top">
-                            <label htmlFor="radio-double" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
-                            className="background-color-primary color-secondary">
+                        <form onSubmit={checkAnswer} className="margin-top exercises-pratice-form">
+                            <label htmlFor="radio-double" className="exercises-pratice-label margin-right background-color-primary color-secondary">
                                 Double
                             </label>
                             <input type="radio" id="radio-double" name="answer-radio" value="double" />
 
-                            <label htmlFor="radio-simple" style={{paddingTop: 10, paddingBottom: 10, paddingLeft: 35, paddingRight: 35,   marginLeft: 10, marginRight: 20, border: 'none', cursor: 'pointer', borderRadius: 5}} 
-                            className="background-color-primary color-secondary">
+                            <label htmlFor="radio-simple" className="exercises-pratice-label margin-left margin-right background-color-primary color-secondary">
                                 Simple
                             </label>
                             <input type="radio" id="radio-simple" name="answer-radio" value="simple" />
                             
-                            <div style={{width: '100%', border: '2px solid black', textAlign: 'center'}}>
-                                <button type="submit" style={{color: 'white', marginTop: 20, paddingTop: 25, paddingBottom: 25, paddingLeft: 35, paddingRight: 35, marginRight: 10, border: 'none', cursor: 'pointer', borderRadius: 5}} 
-                                className="background-color-secondary">
+                            <div style={{border: '2px solid black'}} className="width-100 text-align-center">
+                                <button type="submit" className="exercises-pratice-button margin-top color-quinternary background-color-secondary">
                                     Valider
                                 </button>
                             </div>
