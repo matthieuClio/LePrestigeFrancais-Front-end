@@ -19,9 +19,15 @@ export const data: Array<Exercise> = [
         "correctAnswer": "double"
     },
     {
-        "id": 2,
+        "id": 3,
         "category": "double consonants",
-        "question": "Respons_able",
-        "correctAnswer": "simple"
+        "question": "Person_e",
+        "correctAnswer": "double"
+    },
+    {
+        "id": 3,
+        "category": "double consonants",
+        "question": "Dos_ier",
+        "correctAnswer": "double"
     }
 ];

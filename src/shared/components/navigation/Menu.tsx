@@ -1,23 +1,26 @@
 // React router
 import { Link } from "react-router";
 
+// Style
+import './menu.css';
+
 export default function Menu () {
     return (
         <menu style={{border: '3px solid purple'}}>
             <nav style={{border: '3px solid blue'}}>
                 
-                <ul style={{height: 70, textAlign: 'center', display: 'flex', alignItems: 'center'}} className="background-color-primary list-style-none">
-                    <li style={{border: '2px solid green'}} className="margin-left">
+                <ul className="menu-tabs-container background-color-primary list-style-none text-align-center">
+                    <li className="menu-tabs  margin-left">
                         <Link to='/' className="color-secondary">
                             Logo
                         </Link> 
                     </li>
-                    <li style={{border: '2px solid green'}} className="margin-left">
+                    <li className="menu-tabs  margin-left">
                         <Link to='/' className="color-secondary">
                             Accueil
                         </Link>
                     </li>
-                    <li style={{border: '2px solid green'}} className="margin-left">
+                    <li className="menu-tabs  margin-left">
                         <Link to='/exercices' className="color-secondary">
                             Exercices
                         </Link>
