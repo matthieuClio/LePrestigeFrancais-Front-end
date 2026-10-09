@@ -71,10 +71,7 @@ export default function Exercises () {
                             Leçon : les doubles consonnes
                         </h2>
 
-                        <p className="margin-top color-secondary">
-                            (Source : chatgpt)
-                            <br/>
-                            <br/>
+                        <p className="margin-top color-secondary font-size-default">
                             Dans la plupart des cas, la double consonne ne correspond pas à une prononciation plus forte à l'oral.
                             <br/>
                             Il faut simplement mémoriser l'orthographe.
@@ -103,7 +100,7 @@ export default function Exercises () {
                             <br/>
                             Combien de mots à double consonne faut-il apprendre ?
                             <br/>
-                            Il n'existe pas de chiffre officiel, mais on peut faire une estimation :
+                            Il n'existe pas de chiffre officiel, mais nous pouvons faire une estimation :
                             <br/>
                             <br/>
                             Environ 2 000 à 3 000 mots très fréquents couvrent 90 à 95 % de l'écrit professionnel ;
@@ -119,6 +116,10 @@ export default function Exercises () {
                         <h2 className="background-color-secondary padding-top padding-bottom color-quinternary text-align-center">
                             Exercice
                         </h2>
+
+                        <div className="exercises-pratice-statement margin-top color-quinternary text-align-center">
+                            Enoncé : indiquer si le mot suivant à une double consonne ou simple à l'endroit indiqué.
+                        </div>
 
                         <span className="exercises-pratice-nbquestion margin-top padding color-secondary background-color-primary text-align-center">
                             {data[currenteQuestion].id} / {maxData}
