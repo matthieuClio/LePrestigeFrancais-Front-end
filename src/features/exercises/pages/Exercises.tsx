@@ -131,9 +131,12 @@ export default function Exercises () {
                             </span>
                         </div>
 
-                        <div className={notification.answer ? 'exercises-pratice-notification background-color-secondary text-align-center' : 'exercises-pratice-notification background-color-error'}>
-                            {notification.text}
-                        </div>
+                        { // The notification is not display if it has no content
+                            notification.text && 
+                            <div className={notification.answer ? 'exercises-pratice-notification background-color-secondary text-align-center' : 'exercises-pratice-notification background-color-error'}>
+                                {notification.text}
+                            </div>
+                        }
 
                         <form onSubmit={checkAnswer} className="margin-top exercises-pratice-form">
                             <label htmlFor="radio-double" className="exercises-pratice-label margin-right background-color-primary color-secondary">
