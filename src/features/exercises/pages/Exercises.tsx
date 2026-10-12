@@ -38,7 +38,7 @@ export default function Exercises () {
             });
 
         // Bad answer
-        } else if (data[0].correctAnswer !== formRadio) {
+        } else if (data[currenteQuestion].correctAnswer !== formRadio) {
             setNotification({
                 answer: false,
                 text: 'Erreur, la bonne réponse était : ' + data[currenteQuestion].correctAnswer
